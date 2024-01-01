@@ -91,9 +91,9 @@ class Guess:
         if not self.is_trained:
             LOGGER.error('Cannot predict using an untrained model')
             raise GuesslangError(
-                f'Cannot predict using the untrained model located at '
+                'Cannot predict using the untrained model located at '
                 f'{self._saved_model_dir}. '
-                f'Train your model with `guess.train(source_files_dir)`'
+                'Train your model with `guess.train(source_files_dir)`'
             )
 
         return model.predict(self._model, self._extension_map, source_code)
@@ -117,7 +117,7 @@ class Guess:
             LOGGER.error('Model already trained')
             raise GuesslangError(
                 f'The current model located at {self._saved_model_dir} '
-                f'is already trained'
+                'is already trained'
             )
 
         input_path = Path(source_files_dir)
